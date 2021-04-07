@@ -176,7 +176,7 @@
     <Compile Include="Controllers\LocationController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MowerController.cs" />
-    <Compile Include="Controllers\YardWork.cs" />
+    <Compile Include="Controllers\YardWorkController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
