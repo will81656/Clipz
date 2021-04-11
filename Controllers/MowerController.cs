@@ -28,6 +28,11 @@ namespace Clipz.Controllers
             return View(model);
         }
 
+        public ActionResult Create()
+        {
+            return View();
+        }
+
 
         // POST: Mower/Create
         [HttpPost]
@@ -50,6 +55,13 @@ namespace Clipz.Controllers
 
             //Populate();
             ModelState.AddModelError("", "Mower Profile could not be created");
+            return View(model);
+        }
+
+        public ActionResult Details(int id)
+        {
+            var service = CreateMowerService();
+            var model = service.GetMowerById(id);
             return View(model);
         }
 
@@ -102,11 +114,21 @@ namespace Clipz.Controllers
             return View();
         }
 
+        // GET: Mower/Delete/{id}
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var service = CreateMowerService();
+            var model = service.GetMowerById(id);
+
+            return View(model);
+        }
+
         // POST: Mower/Delete/{id}
         [HttpPost]
         [ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id)
+        public ActionResult DeleteMower(int id)
         {
             var service = CreateMowerService();
             service.DeleteMower(id);

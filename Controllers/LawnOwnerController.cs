@@ -27,6 +27,10 @@ namespace Clipz.Controllers
             return View(model);
         }
 
+        public ActionResult Create()
+        {
+            return View();
+        }
 
         // POST: LawnOwner/Create
         [HttpPost]
@@ -49,6 +53,14 @@ namespace Clipz.Controllers
 
             //Populate();
             ModelState.AddModelError("", "Lawn could not be created");
+            return View(model);
+        }
+
+        // Get: LawnOwner/Details/Id
+        public ActionResult Details(int id)
+        {
+            var service = CreateLawnService();
+            var model = service.GetLawnOwnerById(id);
             return View(model);
         }
 
@@ -102,11 +114,20 @@ namespace Clipz.Controllers
             return View();
         }
 
+        // GET: LawnOwner/Delete/{id}
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var service = CreateLawnService();
+            var model = service.GetLawnOwnerById(id);
+
+            return View(model);
+        }
         // POST: LawnOwner/Delete/{id}
         [HttpPost]
         [ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id)
+        public ActionResult DeleteLawn(int id)
         {
             var service = CreateLawnService();
             service.DeleteLawnOwner(id);
