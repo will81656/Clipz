@@ -27,6 +27,11 @@ namespace Clipz.Controllers
             return View(model);
         }
 
+        public ActionResult Create()
+        {
+            return View();
+        }
+
 
         // POST: Location/Create
         [HttpPost]
@@ -52,7 +57,16 @@ namespace Clipz.Controllers
             return View(model);
         }
 
-        // Read: YardWork/Edit/{id}
+        // Get: Location/Details/Id
+        public ActionResult Details(int id)
+        {
+            var service = CreateLocationService();
+            var model = service.GetLocationById(id);
+            return View(model);
+        }
+
+
+        // Read: Location/Edit/{id}
         public ActionResult Edit(int id)
         {
 
@@ -102,14 +116,24 @@ namespace Clipz.Controllers
             return View();
         }
 
+        // GET: Location/Delete/{id}
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var service = CreateLocationService();
+            var model = service.GetLocationById(id);
+
+            return View(model);
+        }
+
         // POST: Location/Delete/{id}
         [HttpPost]
         [ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id)
+        public ActionResult DeleteLocation(int id)
         {
             var service = CreateLocationService();
-            service.DeleteLocation(id);
+            service.GetLocationById(id);
 
             TempData["SaveResult"] = "Your Location was deleted.";
             return RedirectToAction("Index");

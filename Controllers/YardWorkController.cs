@@ -27,6 +27,12 @@ namespace Clipz.Controllers
 
             return View(model);
         }
+        
+        
+        public ActionResult Create()
+        {
+            return View();
+        }
 
 
         // POST: YardWork/Create
@@ -53,7 +59,14 @@ namespace Clipz.Controllers
             return View(model);
         }
 
-        // Read: YardWork/Edit/{id}
+        // /Get: YardWork/Details/{id}
+        public ActionResult Details(int id)
+        {
+            var service = CreateWorkService();
+            var model = service.GetYardWorkById(id);
+            return View(model);
+        }
+
         public ActionResult Edit(int id)
         {
 
@@ -101,14 +114,24 @@ namespace Clipz.Controllers
             return View();
         }
 
+        // GET: YardWork/Delete/{id}
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var service = CreateWorkService();
+            var model = service.GetYardWorkById(id);
+
+            return View(model);
+        }
+
         // POST: YardWork/Delete/{id}
         [HttpPost]
         [ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id)
+        public ActionResult DeleteYardWork(int id)
         {
             var service = CreateWorkService();
-            service.DeleteYardWork(id);
+            service.GetYardWorkById(id);
 
             TempData["SaveResult"] = "Your YardWork  was deleted.";
             return RedirectToAction("Index");
