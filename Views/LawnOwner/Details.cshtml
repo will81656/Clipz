@@ -1,0 +1,66 @@
+﻿@model Clipz.Models.LawnOwnerModels.LawnOwnerDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+<br />  
+<h2>Details</h2>
+
+<div>
+    <h4>LawnOwnerDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LawnOwnerId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LawnOwnerId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.YardWorkId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.YardWorkId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LocationId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LocationId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new {  id = Model.LawnOwnerId  }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

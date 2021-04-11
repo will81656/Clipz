@@ -172,7 +172,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LawnNote.cs" />
-    <Compile Include="Controllers\LawnOwner.cs" />
+    <Compile Include="Controllers\LawnOwnerController.cs" />
     <Compile Include="Controllers\LocationController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MowerController.cs" />
@@ -361,10 +361,14 @@
     <Content Include="Views\Mower\Details.cshtml" />
     <Content Include="Views\Mower\Edit.cshtml" />
     <Content Include="Views\Mower\Delete.cshtml" />
+    <Content Include="Views\LawnOwner\Index.cshtml" />
+    <Content Include="Views\LawnOwner\Create.cshtml" />
+    <Content Include="Views\LawnOwner\Details.cshtml" />
+    <Content Include="Views\LawnOwner\Edit.cshtml" />
+    <Content Include="Views\LawnOwner\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\LawnOwner\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
