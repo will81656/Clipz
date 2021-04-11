@@ -351,12 +351,16 @@
     <Content Include="Views\Location\Details.cshtml" />
     <Content Include="Views\Location\Edit.cshtml" />
     <Content Include="Views\Location\Delete.cshtml" />
+    <Content Include="Views\YardWork\Index.cshtml" />
+    <Content Include="Views\YardWork\Create.cshtml" />
+    <Content Include="Views\YardWork\Details.cshtml" />
+    <Content Include="Views\YardWork\Edit.cshtml" />
+    <Content Include="Views\YardWork\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\LawnOwner\" />
     <Folder Include="Views\Mower\" />
-    <Folder Include="Views\YardWork\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
