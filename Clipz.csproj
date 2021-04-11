@@ -356,11 +356,15 @@
     <Content Include="Views\YardWork\Details.cshtml" />
     <Content Include="Views\YardWork\Edit.cshtml" />
     <Content Include="Views\YardWork\Delete.cshtml" />
+    <Content Include="Views\Mower\Index.cshtml" />
+    <Content Include="Views\Mower\Create.cshtml" />
+    <Content Include="Views\Mower\Details.cshtml" />
+    <Content Include="Views\Mower\Edit.cshtml" />
+    <Content Include="Views\Mower\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\LawnOwner\" />
-    <Folder Include="Views\Mower\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
