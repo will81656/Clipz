@@ -13,13 +13,25 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            @Html.ActionLink("Clipz", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            
             <div class="navbar-collapse collapse" id="navbarSupportedContent">
 
                 <ul class="nav navbar-nav mr-auto">
-                    <li class="nav-item">@Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })</li>
-                    <li class="nav-item">@Html.ActionLink("About", "About", "Home", null, new { @class = "nav-link" })</li>
+                    <p class="site-title">
+                        <a class="navbar-brand" href="@Url.Action("Index", "Home")">
+                            <img src="~/Assets/grass.png" alt="Site Logo" style="height:1.75em; width: 1.75em" />
+                        </a>
+                    </p>
+                    </a>                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li class="nav-item">@Html.ActionLink("Mow Account", "Index", "Mower", null, new { @class = "nav-link" })</li>
+                        <li class="nav-item">@Html.ActionLink("Owner", "Index", "LawnOwner", null, new { @class = "nav-link" })</li>
+                        <li class="nav-item">@Html.ActionLink("Yardwork", "Index", "YardWork", null, new { @class = "nav-link" })</li>
+                        <li class="nav-item">@Html.ActionLink("Lawns", "Index", "Location", null, new { @class = "nav-link" })</li>
+
+                    }
                     <li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("About", "About", "Home", null, new { @class = "nav-link" })</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

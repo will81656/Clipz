@@ -194,6 +194,7 @@ img {
     border-style: none
 }
 
+
 svg {
     overflow: hidden;
     vertical-align: middle
@@ -5259,6 +5260,7 @@ a.badge-dark.focus, a.badge-dark:focus {
     margin-bottom: 2rem;
     background-color: #f7f7f9;
     border-radius: .6rem
+
 }
 
 @media (min-width:576px) {
