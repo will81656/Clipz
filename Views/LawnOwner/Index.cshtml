@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 <br />  
-<h2>Index</h2>
+<h2>Registered Lawn Owners</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -50,7 +50,7 @@
             @Html.DisplayFor(modelItem => item.YardWorkId)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.LocationId)
+            @Html.DisplayFor(modelItem => item.Location.State)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new {  id=item.LawnOwnerId  }) |
